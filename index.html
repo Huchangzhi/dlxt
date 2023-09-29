@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>登录页面</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <form id="loginForm">
+        <label for="username">用户名：</label>
+        <input type="text" id="username" name="username"><br><br>
+        
+        <label for="password">密码：</label>
+        <input type="password" id="password" name="password"><br><br>
+        
+        <input type="submit" value="登录">
+    </form>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // 阻止表单提交
+
+            // 获取用户输入的值
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // 检查用户名和密码并根据情况重定向或显示错误消息
+            if (username === "admin" && password === "admin") {
+                window.location.href = "1.html";
+            } else if (username === "xmx" && password === "123456") {
+                window.location.href = "2.html";
+            } else {
+                alert("无效的用户名或密码");
+            }
+        });
+    </script>
+</body>
+</html>
